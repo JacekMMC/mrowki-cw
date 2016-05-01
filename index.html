@@ -7,6 +7,26 @@
         <title>Wyżyna Krakowsko-Częstochowska</title>
         <meta name="description" content="Wycieczka po wyżynie Krakowsko-Częstochowskiej.">
         <link rel="stylesheet" href="main.css">
+        <script type="text/javascript">
+        
+var roz = new Date().getTime()-(<?php echo date(U); ?>*1000);
+function zegar(){
+miesiace= new Array ('Stycznia', 'Lutego', 'Marca', 'Kwietnia', 'Maja', 'Czerwca', 'Lipca', 'Sierpnia', 'Września', 'Października', 'Listopada', 'Grudnia')
+D = new Date();
+D.setTime(D.getTime()-roz);
+G = D.getHours();
+M = D.getMinutes(); M=M<10?'0'+M:M;
+S = D.getSeconds(); S=S<10?'0'+S:S;
+r = D.getFullYear();
+m = miesiace[D.getMonth()];
+d = D.getDate();
+
+document.getElementById('czas').innerHTML=' '+ G + ':' + M + ':' + S;
+document.getElementById('data').innerHTML=' '+ d + ' ' + m + ' ' + r + ' ' + 'roku'
+setTimeout('zegar()', 1000);
+}
+</script>
+
     </head>
     <body>
 
@@ -19,7 +39,10 @@
      		</table>
      		</center>
      	</p>
-     		
+     		Dziś jest <span id="data"></span>
+		Godzina <span id="czas"></span>
+		<script type="text/javascript">zegar()</script>
+
 <marquee bgcolor="green" behavior="scroll"><h2><font color="white">Oto propozycja spędzenia kilku dni w malowniczym terenie.</font></h2></marquee>	
    </header>
    
